@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAMEN APPAREL | Luxury Streetwear & Hoodies</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0a0a0a',
+                            surface: '#121212',
+                            card: '#1a1a1a',
+                            gold: '#d4af37',
+                            goldHover: '#c5a028'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-brand text-gray-100 font-sans antialiased selection:bg-brand-gold selection:text-brand">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-extrabold tracking-widest text-white flex items-center gap-2">
+                MOAMEN <span class="text-xs px-2 py-0.5 rounded bg-brand-gold/10 text-brand-gold border border-brand-gold/20 tracking-normal">LUXURY</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-medium tracking-wider">
+                <a href="#home" class="text-brand-gold transition-colors">HOME</a>
+                <a href="#collection" class="text-gray-400 hover:text-white transition-colors">COLLECTION</a>
+                <a href="#craftsmanship" class="text-gray-400 hover:text-white transition-colors">CRAFTSMANSHIP</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition-colors">CONTACT</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative p-2 text-gray-300 hover:text-brand-gold transition-colors" aria-label="Shopping Cart">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span id="cart-badge" class="absolute top-1 right-1 w-4 h-4 bg-brand-gold text-brand font-bold text-[10px] rounded-full flex items-center justify-center scale-0 transition-transform duration-300">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-brand to-brand-surface">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:32px_32px]"></div>
+        <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+            <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold mb-4 inline-block px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/5">THE MASTERPIECES</span>
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                SIGNATURE HOODIES
+            </h1>
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Uncompromising luxury meets supreme streetwear silhouette. Crafted from 500GSM heavyweight organic cotton for a timeless drape.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#collection" class="w-full sm:w-auto px-8 py-4 bg-brand-gold text-brand font-bold text-sm tracking-widest uppercase rounded-none hover:bg-brand-goldHover transition-all shadow-lg shadow-brand-gold/10">
+                    EXPLORE COLLECTION
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="collection" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold">LIMITED RELEASE</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">THE ARCHIVE EDITIONS</h2>
+            </div>
+            <p class="text-gray-400 text-sm mt-4 md:mt-0 max-w-xs">Each piece is individually numbered and produced in strictly limited quantities.</p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic Products Injected via JS -->
+        </div>
+    </section>
+
+    <!-- Craftsmanship Section -->
+    <section id="craftsmanship" class="py-24 bg-brand-surface border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="p-8 bg-brand border border-white/5">
+                <div class="w-12 h-12 bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 font-bold text-lg">01</div>
+                <h3 class="text-xl font-bold text-white mb-3">500GSM Organic Cotton</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Sourced from elite sustainable mills to deliver unmatched weight, structure, and plush interior texture.</p>
+            </div>
+            <div class="p-8 bg-brand border border-white/5">
+                <div class="w-12 h-12 bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 font-bold text-lg">02</div>
+                <h3 class="text-xl font-bold text-white mb-3">Architectural Cut</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Engineered drop-shoulder construction and double-layered structured hood designed for an impeccable oversized fit.</p>
+            </div>
+            <div class="p-8 bg-brand border border-white/5">
+                <div class="w-12 h-12 bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 font-bold text-lg">03</div>
+                <h3 class="text-xl font-bold text-white mb-3">Minimalist Hardware</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Custom matte black eyelets, subtle tonal silicone branding, and reinforced bar-tacked stitching throughout.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm pointer-events-auto" onclick="toggleCart()"></div>
+        <div class="absolute top-0 right-0 h-full w-full max-w-md bg-brand-surface border-l border-white/10 flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300" id="cart-panel">
+            <div class="p-6 border-b border-white/10 flex items-center justify-between">
+                <h3 class="text-lg font-bold tracking-wider text-white">SHOPPING BAG</h3>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-white p-2">✕</button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-6">
+                <!-- Cart items will load here -->
+            </div>
+            <div class="p-6 border-t border-white/10 bg-brand">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-400 text-sm">Subtotal</span>
+                    <span id="cart-subtotal" class="text-xl font-bold text-white">$0.00</span>
+                </div>
+                <button onclick="checkout()" class="w-full py-4 bg-brand-gold text-brand font-bold text-sm tracking-widest uppercase hover:bg-brand-goldHover transition-colors">
+                    SECURE CHECKOUT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-card border border-brand-gold/30 text-white px-6 py-4 shadow-2xl transform translate-y-32 transition-transform duration-300 flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+        <div>
+            <p id="toast-title" class="text-xs font-bold text-brand-gold uppercase tracking-wider">Added to Bag</p>
+            <p id="toast-msg" class="text-sm text-gray-300"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-brand py-16 border-t border-white/5 text-center text-gray-500 text-xs tracking-widest uppercase">
+        <p class="mb-4 text-white font-bold tracking-widest">MOAMEN APPAREL — LUXURY STREETWEAR</p>
+        <p>&copy; 2026 ALL RIGHTS RESERVED. DESIGNED FOR THE ELITE.</p>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "ONYX HEAVYWEIGHT HOODIE", price: 280, color: "Obsidian Black", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" },
+            { id: 2, name: "ECLIPSE OVERSIZED HOODIE", price: 295, color: "Charcoal Slate", image: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80" },
+            { id: 3, name: "IVORY MINIMALIST HOODIE", price: 280, color: "Bone Ecru", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" },
+            { id: 4, name: "MIDNIGHT VELOUR HOODIE", price: 320, color: "Deep Navy", image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80" },
+            { id: 5, name: "GRAPHITE STRUCTURED HOODIE", price: 290, color: "Steeltone", image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80" },
+            { id: 6, name: "VINTAGE WASH HOODIE", price: 310, color: "Washed Carbon", image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80" }
+        ];
+
+        let cart = [];
+        let selectedSizes = {};
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="group bg-brand-card border border-white/5 overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative aspect-[4/5] overflow-hidden bg-brand-surface">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90">
+                            <span class="absolute top-4 left-4 bg-brand/80 backdrop-blur-md text-brand-gold text-[10px] font-bold tracking-widest px-3 py-1 uppercase border border-brand-gold/20">500GSM</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">${p.color}</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">${p.name}</h3>
+                            <div class="text-brand-gold font-bold text-lg mb-4">$${p.price}.00</div>
+                            <div class="flex gap-2 mb-6">
+                                ${['S', 'M', 'L', 'XL'].map(size => `
+                                    <button onclick="selectSize(${p.id}, '${size}')" id="size-${p.id}-${size}" class="size-btn-${p.id} flex-1 py-2 text-xs border border-white/10 text-gray-400 hover:border-brand-gold hover:text-white transition-all">${size}</button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="addToCart(${p.id})" class="w-full py-3.5 bg-white/5 hover:bg-brand-gold hover:text-brand text-white font-bold text-xs tracking-widest uppercase transition-all border border-white/10 hover:border-brand-gold">
+                            ADD TO BAG
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectSize(productId, size) {
+            document.querySelectorAll(`.size-btn-${productId}`).forEach(btn => {
+                btn.classList.remove('border-brand-gold', 'text-white', 'bg-brand-gold/10');
+            });
+            const selectedBtn = document.getElementById(`size-${productId}-${size}`);
+            selectedBtn.classList.add('border-brand-gold', 'text-white', 'bg-brand-gold/10');
+            selectedSizes[productId] = size;
+        }
+
+        function addToCart(productId) {
+            const size = selectedSizes[productId];
+            if (!size) {
+                showToast("Selection Required", "Please select a size first.");
+                return;
+            }
+            const product = products.find(p => p.id === productId);
+            const cartItemKey = `${productId}-${size}`;
+            const existing = cart.find(item => item.key === cartItemKey);
+
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ ...product, size, key: cartItemKey, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast("Added to Bag", `${product.name} (${size}) added successfully.`);
+            toggleCart(true);
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const itemsContainer = document.getElementById('cart-items');
+            const subtotalEl = document.getElementById('cart-subtotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove('scale-0');
+            } else {
+                badge.classList.add('scale-0');
+            }
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = `<div class="text-center text-gray-500 py-12">Your shopping bag is empty.</div>`;
+            } else {
+                itemsContainer.innerHTML = cart.map(item => `
+                    <div class="flex gap-4 items-center bg-brand p-4 border border-white/5">
+                        <img src="${item.image}" class="w-16 h-20 object-cover" alt="">
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold text-white">${item.name}</h4>
+                            <p class="text-xs text-gray-400 mt-0.5">Size: ${item.size} | $${item.price}</p>
+                            <div class="flex items-center gap-3 mt-3">
+                                <button onclick="updateQty('${item.key}', -1)" class="w-6 h-6 border border-white/20 text-white flex items-center justify-center text-xs">-</button>
+                                <span class="text-sm font-semibold">${item.quantity}</span>
+                                <button onclick="updateQty('${item.key}', 1)" class="w-6 h-6 border border-white/20 text-white flex items-center justify-center text-xs">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            subtotalEl.innerText = `$${subtotal}.00`;
+        }
+
+        function updateQty(key, change) {
+            const item = cart.find(i => i.key === key);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.key !== key);
+                }
+                updateCartUI();
+            }
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const panel = document.getElementById('cart-panel');
+            if (forceOpen || drawer.classList.contains('pointer-events-none')) {
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+                panel.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('pointer-events-none', 'opacity-0');
+                panel.classList.add('translate-x-full');
+            }
+        }
+
+        function showToast(title, msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('translate-y-32');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 3000);
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                showToast("Bag is Empty", "Add items before checkout.");
+                return;
+            }
+            showToast("Secure Checkout", "Redirecting to encrypted gateway...");
+            setTimeout(() => {
+                cart = [];
+                updateCartUI();
+                toggleCart();
+                showToast("Order Confirmed", "Thank you for shopping with MOAMEN APPAREL.");
+            }, 2000);
+        }
+
+        window.onload = function() {
+            renderProducts();
+        };
+    </script>
+</body>
+</html>
