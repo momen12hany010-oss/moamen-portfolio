@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moamen | Frontend Engineer & Digital Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --surface-color: #0f0f0f;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --accent-color: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 800;
+            line-height: 1.15;
+            max-width: 900px;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: clamp(16px, 1.5vw, 18px);
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: var(--bg-color);
+            padding: 16px 36px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 120px 8%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Portfolio Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 220px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 8%;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        @media(max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Moamen<span>.</span></div>
+        <nav>
+            <a href="#work">WORK</a>
+            <a href="#expertise">EXPERTISE</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">Frontend Engineer & Developer</div>
+        <h1>Crafting <span>Digital Masterpieces</span> for Global Brands</h1>
+        <p>We transform high-end aesthetics into high-performance, lightning-fast web applications tailored for luxury and streetwear brands.</p>
+        <a href="#contact" class="btn-primary">Start a Project</a>
+    </section>
+
+    <section class="section" id="work">
+        <div class="section-header">
+            <h2>Selected Works</h2>
+            <p>A glimpse into our high-end digital architecture and UI developments.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img">Luxury E-Commerce</div>
+                <div class="card-content">
+                    <h3>Aura Streetwear</h3>
+                    <p>Minimalist frontend architecture optimized for conversion, speed, and seamless mobile interactions.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">Immersive Storefront</div>
+                <div class="card-content">
+                    <h3>Vogue Minimal</h3>
+                    <p>Clean layout, dark-mode engineering, and immersive animations built for elite fashion brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact" style="text-align: center;">
+        <div class="section-header">
+            <h2>Ready to Elevate Your Brand?</h2>
+            <p>Let's build something extraordinary together.</p>
+        </div>
+        <a href="mailto:contact@moamen.dev" class="btn-primary">Get in Touch</a>
+    </section>
+
+    <footer>
+        <p>© 2026 MOAMEN. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
