@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US | MOAMEN APPAREL</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0a0a0a',
+                            surface: '#121212',
+                            card: '#1a1a1a',
+                            gold: '#d4af37',
+                            goldHover: '#c5a028'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-brand text-gray-100 font-sans antialiased selection:bg-brand-gold selection:text-brand">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-extrabold tracking-widest text-white flex items-center gap-2">
+                MOAMEN <span class="text-xs px-2 py-0.5 rounded bg-brand-gold/10 text-brand-gold border border-brand-gold/25 tracking-normal">LUXURY</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-medium tracking-wider">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">HOME</a>
+                <a href="shop.html" class="text-gray-400 hover:text-white transition-colors">SHOP</a>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors">CRAFTSMANSHIP</a>
+                <a href="contact.html" class="text-brand-gold transition-colors">CONTACT</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="shop.html" class="text-xs font-bold tracking-widest uppercase px-4 py-2 bg-brand-gold text-brand hover:bg-brand-goldHover transition-colors">
+                    EXPLORE SHOP
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-12 bg-gradient-to-b from-brand to-brand-surface border-b border-white/5 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold mb-3 inline-block">GET IN TOUCH</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">CLIENT SERVICE & INQUIRIES</h1>
+            <p class="text-gray-400 text-sm md:text-base font-light">We are available for private consultations, order assistance, and stock inquiries.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="bg-brand-card p-8 md:p-12 border border-white/5">
+                <h3 class="text-xl font-bold text-white mb-6">SEND US A MESSAGE</h3>
+                <form onsubmit="handleContact(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Full Name</label>
+                        <input type="text" required class="w-full bg-brand border border-white/10 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" required class="w-full bg-brand border border-white/10 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="john@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Message</label>
+                        <textarea rows="5" required class="w-full bg-brand border border-white/10 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="How can we assist you?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-brand-gold text-brand font-bold text-sm tracking-widest uppercase hover:bg-brand-goldHover transition-colors">
+                        SEND INQUIRY
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info / Details -->
+            <div class="flex flex-col justify-between space-y-8">
+                <div class="bg-brand-card p-8 md:p-12 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-6">HEADQUARTERS & SHOWROOM</h3>
+                    <ul class="space-y-6 text-sm text-gray-400">
+                        <li class="flex items-start gap-4">
+                            <span class="text-brand-gold font-bold">ADDRESS:</span>
+                            <span>742 Evergreen Terrace, Luxury District, New York, NY</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-brand-gold font-bold">EMAIL:</span>
+                            <span>concierge@moamenapparel.com</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-brand-gold font-bold">HOURS:</span>
+                            <span>Monday — Friday: 9:00 AM – 6:00 PM EST</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-surface p-8 border border-white/5 text-center">
+                    <h4 class="text-white font-bold text-sm mb-2 uppercase tracking-wider">PRIVATE APPOINTMENTS</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">For bespoke archive fittings, schedule an exclusive session with our private client stylists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-card border border-brand-gold/30 text-white px-6 py-4 shadow-2xl transform translate-y-32 transition-transform duration-300 flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+        <div>
+            <p id="toast-title" class="text-xs font-bold text-brand-gold uppercase tracking-wider">Success</p>
+            <p id="toast-msg" class="text-sm text-gray-300"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand py-16 border-t border-white/5 text-center text-gray-500 text-xs tracking-widest uppercase">
+        <p class="mb-4 text-white font-bold tracking-widest">MOAMEN APPAREL — LUXURY STREETWEAR</p>
+        <p>&copy; 2026 ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        function handleContact(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = "Inquiry Sent";
+            document.getElementById('toast-msg').innerText = "Thank you. Our concierge will contact you shortly.";
+            toast.classList.remove('translate-y-32');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 3000);
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
