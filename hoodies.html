@@ -1,0 +1,494 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAMEN APPAREL | Luxury Streetwear & Hoodies</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0a0a0a',
+                            surface: '#121212',
+                            card: '#1a1a1a',
+                            gold: '#d4af37',
+                            goldHover: '#c5a028',
+                            muted: '#888888',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-brand text-white font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand/90 backdrop-blur-md border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="text-xl sm:text-2xl font-bold tracking-[0.2em] text-white uppercase flex items-center gap-2">
+                MOAMEN <span class="text-brand-gold text-xs px-2 py-0.5 border border-brand-gold/40 rounded-full tracking-normal font-normal">LUXE</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm tracking-widest uppercase font-medium text-neutral-300">
+                <a href="#home" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="#collection" class="hover:text-brand-gold transition-colors">Collection</a>
+                <a href="#about" class="hover:text-brand-gold transition-colors">Craftsmanship</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- Actions (Cart & Mobile Menu Toggle) -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" aria-label="Open Shopping Cart" class="relative p-3 rounded-full bg-neutral-900 border border-neutral-800 hover:border-brand-gold transition-all text-neutral-200 hover:text-brand-gold">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-gold text-black text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center scale-0 transition-transform duration-300">0</span>
+                </button>
+                <button onclick="toggleMobileMenu()" aria-label="Toggle Mobile Menu" class="md:hidden p-3 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-200 hover:text-brand-gold">
+                    <i class="fa-solid fa-bars text-lg" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-b border-neutral-800 px-6 py-6 space-y-4">
+            <a href="#home" onclick="toggleMobileMenu()" class="block text-sm tracking-widest uppercase text-neutral-300 hover:text-brand-gold">Home</a>
+            <a href="#collection" onclick="toggleMobileMenu()" class="block text-sm tracking-widest uppercase text-neutral-300 hover:text-brand-gold">Collection</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-sm tracking-widest uppercase text-neutral-300 hover:text-brand-gold">Craftsmanship</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-sm tracking-widest uppercase text-neutral-300 hover:text-brand-gold">Contact</a>
+        </div>
+    </header>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-brand to-neutral-950">
+        <!-- Background decorative ambient lighting -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center relative z-10">
+            <span class="inline-block text-brand-gold text-xs sm:text-sm tracking-[0.3em] uppercase mb-4 px-4 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20">
+                Autumn / Winter 2026 Collection
+            </span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-light tracking-tight uppercase max-w-4xl mx-auto leading-tight mb-6">
+                Elegance in <span class="font-bold text-brand-gold">Oversized</span> Silhouette
+            </h1>
+            <p class="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                Handcrafted heavy-weight French Terry hoodies designed for the discerning minimalist. Unmatched texture, structured drape, and uncompromising luxury.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#collection" class="w-full sm:w-auto px-8 py-4 bg-brand-gold text-black font-semibold uppercase tracking-wider rounded-lg hover:bg-brand-goldHover transition-all shadow-lg shadow-brand-gold/20">
+                    Explore Collection
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-neutral-700 hover:border-brand-gold text-neutral-200 font-semibold uppercase tracking-wider rounded-lg transition-all">
+                    Our Heritage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="collection" class="py-24 bg-neutral-950 relative border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-[0.3em] text-brand-gold mb-3">The Masterpieces</h2>
+                <h3 class="text-3xl sm:text-4xl font-light tracking-wide uppercase">Signature Hoodies</h3>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mt-4"></div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-brand border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs uppercase tracking-[0.3em] text-brand-gold mb-3 block">Uncompromising Quality</span>
+                <h2 class="text-3xl sm:text-4xl font-light tracking-wide uppercase mb-6">Crafted for Eternity, Styled for Today</h2>
+                <p class="text-neutral-400 font-light leading-relaxed mb-6">
+                    Every piece in MOAMEN APPAREL is born from obsessive attention to detail. We source 500GSM organic combed cotton paired with reinforced double-needle stitching to achieve the ultimate structured streetwear fit.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-neutral-800">
+                    <div>
+                        <h4 class="text-2xl font-bold text-brand-gold mb-1">500 GSM</h4>
+                        <p class="text-xs text-neutral-400 uppercase tracking-wider">Heavyweight French Terry</p>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-brand-gold mb-1">100% Organic</h4>
+                        <p class="text-xs text-neutral-400 uppercase tracking-wider">Sustainable Luxury</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 p-2">
+                <img src="https://placehold.co/800x600/121212/d4af37?text=MOAMEN+CRAFTSMANSHIP" alt="Craftsmanship" class="w-full h-[400px] object-cover rounded-xl filter grayscale hover:grayscale-0 transition-all duration-700" onerror="this.src='https://placehold.co/800x600/111/fff?text=Placeholder'">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <a href="#" class="text-xl font-bold tracking-[0.2em] text-white uppercase mb-4 block">
+                    MOAMEN <span class="text-brand-gold">APPAREL</span>
+                </a>
+                <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                    Redefining luxury streetwear through minimalist silhouettes and exceptional material density. Designed for modern urban icons.
+                </p>
+                <div class="flex items-center gap-4 text-neutral-400">
+                    <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center hover:text-brand-gold hover:border-brand-gold transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center hover:text-brand-gold hover:border-brand-gold transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center hover:text-brand-gold hover:border-brand-gold transition-all"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold uppercase tracking-widest text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-neutral-400">
+                    <li><a href="#home" class="hover:text-brand-gold transition-colors">Home</a></li>
+                    <li><a href="#collection" class="hover:text-brand-gold transition-colors">Collection</a></li>
+                    <li><a href="#about" class="hover:text-brand-gold transition-colors">Craftsmanship</a></li>
+                    <li><a href="#contact" class="hover:text-brand-gold transition-colors">Support & FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold uppercase tracking-widest text-white mb-4">Newsletter</h4>
+                <p class="text-neutral-400 text-sm mb-4">Subscribe to receive private drop announcements and VIP discounts.</p>
+                <form onsubmit="handleNewsletter(event)" class="flex gap-2">
+                    <input type="email" placeholder="Enter your email" required class="bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-brand-gold text-white flex-grow">
+                    <button type="submit" class="bg-brand-gold text-black px-5 py-3 font-semibold text-sm rounded-lg hover:bg-brand-goldHover transition-all">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-neutral-900 text-center text-xs text-neutral-500">
+            &copy; 2026 MOAMEN APPAREL. All Rights Reserved. Crafted for Frontend Excellence.
+        </div>
+    </footer>
+
+    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+        <!-- Backdrop -->
+        <div id="cart-backdrop" onclick="toggleCart()" class="absolute inset-0 bg-black/70 backdrop-blur-sm pointer-events-auto"></div>
+        <!-- Drawer Panel -->
+        <div id="cart-panel" class="absolute top-0 right-0 h-full w-full max-w-md bg-brand-surface border-l border-neutral-800 p-6 flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300">
+            <!-- Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-neutral-800">
+                <h3 class="text-lg font-bold tracking-wider uppercase text-white flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-brand-gold"></i> Your Shopping Bag
+                </h3>
+                <button onclick="toggleCart()" aria-label="Close Shopping Cart" class="p-2 text-neutral-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <!-- Cart Items Container -->
+            <div id="cart-items" class="flex-grow overflow-y-auto py-4 space-y-4">
+                <!-- Dynamically populated -->
+            </div>
+            <!-- Footer / Checkout -->
+            <div class="pt-4 border-t border-neutral-800 space-y-4">
+                <div class="flex items-center justify-between text-base">
+                    <span class="text-neutral-400 uppercase tracking-wider text-xs">Subtotal</span>
+                    <span id="cart-total" class="text-xl font-bold text-brand-gold">$0.00</span>
+                </div>
+                <button onclick="checkout()" class="w-full py-4 bg-brand-gold text-black font-bold uppercase tracking-wider rounded-lg hover:bg-brand-goldHover transition-all shadow-lg shadow-brand-gold/10">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-neutral-900 border border-brand-gold/40 px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-brand-gold text-lg"></i>
+        <div>
+            <h5 id="toast-title" class="text-sm font-semibold text-white">Added to Cart</h5>
+            <p id="toast-msg" class="text-xs text-neutral-400">Item successfully added to your bag.</p>
+        </div>
+    </div>
+
+    <script>
+        // Products Dataset
+        const products = [
+            {
+                id: 1,
+                name: "Midnight Obsidian Heavy Hoodie",
+                price: 185.00,
+                tag: "Bestseller",
+                image: "https://placehold.co/600x700/121212/d4af37?text=OBSIDIAN+HOODIE",
+                desc: "500GSM ultra-dense french terry with dropped shoulders and custom matte hardware."
+            },
+            {
+                id: 2,
+                name: "Ivory Minimalist Oversized Hoodie",
+                price: 175.00,
+                tag: "New Drop",
+                image: "https://placehold.co/600x700/1a1a1a/d4af37?text=IVORY+HOODIE",
+                desc: "Clean bone-white hue with subtle tonal chest embroidery and ribbed side panels."
+            },
+            {
+                id: 3,
+                name: "Carbon Grey Vintage Wash Hoodie",
+                price: 195.00,
+                tag: "Limited Edition",
+                image: "https://placehold.co/600x700/151515/d4af37?text=CARBON+HOODIE",
+                desc: "Enzyme washed for an authentic vintage hand-feel with generous boxy drape."
+            },
+            {
+                id: 4,
+                name: "Golden Hour Luxury Hoodie",
+                price: 210.00,
+                tag: "Exclusive",
+                image: "https://placehold.co/600x700/1e1e1e/d4af37?text=GOLDEN+HOODIE",
+                desc: "Deep espresso brown tone infused with subtle metallic gold stitching accents."
+            },
+            {
+                id: 5,
+                name: "Raw Canvas Boxy Fit Hoodie",
+                price: 165.00,
+                tag: "Essential",
+                image: "https://placehold.co/600x700/181818/d4af37?text=CANVAS+HOODIE",
+                desc: "Unbleached natural cotton fibers showcasing organic flecks and supreme warmth."
+            },
+            {
+                id: 6,
+                name: "Shadow Noir Zip-Up Hoodie",
+                price: 220.00,
+                tag: "Signature",
+                image: "https://placehold.co/600x700/111111/d4af37?text=NOIR+ZIP+HOODIE",
+                desc: "Heavyweight dual-zipper construction designed for architectural layering."
+            }
+        ];
+
+        // Shopping Cart State
+        let cart = [];
+        const sizes = ['S', 'M', 'L', 'XL'];
+
+        // Render Product Catalog
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-brand-gold/50 transition-all duration-500 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950">
+                            <span class="absolute top-4 left-4 z-10 bg-brand/80 backdrop-blur-md text-brand-gold text-[10px] uppercase font-semibold px-3 py-1 rounded-full border border-brand-gold/30">
+                                ${p.tag}
+                            </span>
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x700/111/fff?text=Product'">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-medium text-white mb-2 group-hover:text-brand-gold transition-colors">${p.name}</h3>
+                            <p class="text-neutral-400 text-xs leading-relaxed mb-4">${p.desc}</p>
+                            <!-- Size Selector -->
+                            <div class="mb-4">
+                                <label class="block text-[10px] uppercase tracking-wider text-neutral-400 mb-2">Select Size</label>
+                                <div class="flex gap-2" id="sizes-${p.id}">
+                                    ${sizes.map((s, idx) => `
+                                        <button onclick="selectSize(${p.id}, '${s}')" class="size-btn-${p.id} flex-1 py-1.5 text-xs font-medium rounded border ${idx === 1 ? 'border-brand-gold bg-brand-gold text-black font-bold' : 'border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-neutral-600'} transition-all">
+                                            ${s}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-neutral-800/60 pt-4 mt-auto">
+                        <span class="text-xl font-bold text-white">$${p.price.toFixed(2)}</span>
+                        <button onclick="addToCart(${p.id})" class="px-5 py-2.5 bg-neutral-800 hover:bg-brand-gold hover:text-black text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Bag
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Active selected sizes state per product
+        const selectedSizes = {};
+        products.forEach(p => selectedSizes[p.id] = 'M'); // Default size M
+
+        function selectSize(productId, size) {
+            selectedSizes[productId] = size;
+            const container = document.getElementById(`sizes-${productId}`);
+            const buttons = container.querySelectorAll('button');
+            buttons.forEach(btn => {
+                if (btn.innerText.trim() === size) {
+                    btn.className = `size-btn-${productId} flex-1 py-1.5 text-xs font-bold rounded border border-brand-gold bg-brand-gold text-black transition-all`;
+                } else {
+                    btn.className = `size-btn-${productId} flex-1 py-1.5 text-xs font-medium rounded border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-neutral-600 transition-all`;
+                }
+            });
+        }
+
+        // Cart Drawer Control
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const panel = document.getElementById('cart-panel');
+            if (drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                panel.classList.add('translate-x-full');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-lg';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-lg';
+            }
+        }
+
+        // Add to Cart Logic
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const size = selectedSizes[productId];
+            
+            const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({ ...product, size, qty: 1 });
+            }
+
+            updateCartUI();
+            showToast("Added to Bag", `${product.name} (${size}) added successfully.`);
+            
+            // Open cart drawer automatically
+            const drawer = document.getElementById('cart-drawer');
+            if (drawer.classList.contains('opacity-0')) {
+                toggleCart();
+            }
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const badge = document.getElementById('cart-badge');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove('scale-0');
+            } else {
+                badge.classList.add('scale-0');
+            }
+
+            totalEl.innerText = `$${totalPrice.toFixed(2)}`;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16 text-neutral-500">
+                        <i class="fa-solid fa-bag-shopping text-4xl mb-3"></i>
+                        <p class="text-sm">Your shopping bag is empty.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = cart.map((item, index) => `
+                <div class="flex items-center gap-4 bg-neutral-900 border border-neutral-800 p-4 rounded-xl">
+                    <img src="${item.image}" alt="${item.name}" class="w-16 h-20 object-cover rounded-lg bg-neutral-950">
+                    <div class="flex-grow">
+                        <h4 class="text-sm font-medium text-white">${item.name}</h4>
+                        <p class="text-xs text-neutral-400 mt-0.5">Size: <span class="text-brand-gold font-semibold">${item.size}</span></p>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-sm font-bold text-brand-gold">$${(item.price * item.qty).toFixed(2)}</span>
+                            <div class="flex items-center gap-2 bg-neutral-950 border border-neutral-800 rounded px-2 py-1">
+                                <button onclick="updateQty(${index}, -1)" class="text-neutral-400 hover:text-white px-1"><i class="fa-solid fa-minus text-xs"></i></button>
+                                <span class="text-xs font-semibold w-4 text-center">${item.qty}</span>
+                                <button onclick="updateQty(${index}, 1)" class="text-neutral-400 hover:text-white px-1"><i class="fa-solid fa-plus text-xs"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="removeItem(${index})" class="text-neutral-500 hover:text-red-400 p-2"><i class="fa-solid fa-trash-can text-sm"></i></button>
+                </div>
+            `).join('');
+        }
+
+        function updateQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        // Toast Notification
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = message;
+            
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3500);
+        }
+
+        // Checkout Action
+        function checkout() {
+            if (cart.length === 0) {
+                showToast("Empty Bag", "Please add items to your bag before checkout.");
+                return;
+            }
+            showToast("Secure Checkout", "Redirecting to encrypted payment gateway...");
+            setTimeout(() => {
+                cart = [];
+                updateCartUI();
+                toggleCart();
+                showToast("Order Confirmed", "Thank you for shopping with MOAMEN APPAREL.");
+            }, 2000);
+        }
+
+        // Newsletter Handler
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showToast("Subscribed", "You have successfully joined the VIP list.");
+            e.target.reset();
+        }
+
+        // Initialize App on Load
+        window.onload = function() {
+            renderProducts();
+        };
+    </script>
+</body>
+</html>
+```
